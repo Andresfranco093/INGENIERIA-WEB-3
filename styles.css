@@ -1,0 +1,276 @@
+/* ===========================================================
+   Andrés Lira — Ingeniería de sistemas y arquitectura backend
+   Hoja de estilos organizada en: tokens, base, componentes,
+   secciones y breakpoints (móvil primero).
+   =========================================================== */
+
+/* --- 1. Tokens ------------------------------------------- */
+:root {
+  --color-bg: #F5F6F3;
+  --color-bg-alt: #EBEDE8;
+  --color-ink: #1E2328;
+  --color-ink-soft: #52585C;
+  --color-accent: #2F4858;
+  --color-accent-soft: #AFC2CB;
+  --color-line: #D6D9D4;
+
+  --fuente-display: 'Fraunces', Georgia, serif;
+  --fuente-cuerpo: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --espacio-s: 0.75rem;
+  --espacio-m: 1.5rem;
+  --espacio-l: 3rem;
+  --espacio-xl: 6rem;
+
+  --ancho-maximo: 68rem;
+}
+
+/* --- 2. Base ----------------------------------------------- */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--fuente-cuerpo);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-display);
+  color: var(--color-ink);
+  line-height: 1.15;
+  margin: 0 0 var(--espacio-s);
+}
+
+h1 { font-size: clamp(2rem, 4vw + 1rem, 3.25rem); font-weight: 600; }
+h2 { font-size: clamp(1.5rem, 2vw + 1rem, 2.25rem); font-weight: 600; }
+h3 { font-size: 1.25rem; font-weight: 600; }
+
+p { margin: 0 0 var(--espacio-m); max-width: 42em; }
+
+a { color: var(--color-accent); }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.wrap {
+  max-width: var(--ancho-maximo);
+  margin-inline: auto;
+  padding-inline: var(--espacio-m);
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--color-ink);
+  color: var(--color-bg);
+  padding: var(--espacio-s) var(--espacio-m);
+  z-index: 100;
+}
+.skip-link:focus {
+  left: var(--espacio-m);
+  top: var(--espacio-m);
+}
+
+/* --- 3. Componentes ------------------------------------------ */
+.boton {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 0.85em 1.6em;
+  border: none;
+  border-radius: 2px;
+  font-family: var(--fuente-cuerpo);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+.boton:hover { background: var(--color-ink); }
+
+/* --- 4. Encabezado y navegación -------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(246, 244, 239, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--color-line);
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-s);
+  padding-block: var(--espacio-s);
+}
+
+.brand {
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  text-decoration: none;
+  color: var(--color-ink);
+}
+
+.site-nav ul {
+  display: flex;
+  gap: var(--espacio-m);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--color-ink-soft);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--color-ink);
+  border-bottom-color: var(--color-accent);
+}
+
+/* --- 5. Sección: Inicio (hero) ---------------------------------- */
+.hero { padding-block: var(--espacio-xl) var(--espacio-l); }
+
+.hero-inner {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--espacio-l);
+}
+
+.hero-kicker {
+  color: var(--color-accent);
+  font-weight: 500;
+  margin-bottom: var(--espacio-s);
+}
+
+.hero-parrafo { color: var(--color-ink-soft); }
+
+.hero-figura svg { width: 100%; max-width: 220px; height: auto; display: block; margin-inline: auto; }
+.conexion    { stroke: var(--color-accent-soft); stroke-width: 2; }
+.nodo        { fill: var(--color-bg); stroke: var(--color-accent); stroke-width: 2.5; }
+.nodo-central{ fill: var(--color-accent); }
+
+/* --- 6. Sección: Sobre mí / proyectos --------------------------- */
+.sobre-mi {
+  background: var(--color-bg-alt);
+  padding-block: var(--espacio-l);
+  border-block: 1px solid var(--color-line);
+}
+
+.seccion-intro { color: var(--color-ink-soft); }
+
+.proyectos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+  margin-top: var(--espacio-l);
+}
+
+.proyecto {
+  background: var(--color-bg);
+  border: 1px solid var(--color-line);
+  padding: var(--espacio-m);
+  flex: 1 1 0;
+}
+
+.proyecto-meta {
+  color: var(--color-accent);
+  font-size: 0.875rem;
+  margin-bottom: var(--espacio-s);
+}
+
+.proyecto p:last-child { margin-bottom: 0; }
+
+/* --- 7. Sección: Contacto --------------------------------------- */
+.contacto { padding-block: var(--espacio-xl); }
+
+.contacto-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-l);
+}
+
+address { font-style: normal; color: var(--color-ink-soft); }
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+  flex: 1;
+}
+
+.campo { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.campo label { font-weight: 500; }
+
+.campo input,
+.campo textarea {
+  font-family: var(--fuente-cuerpo);
+  font-size: 1rem;
+  padding: 0.7em 0.85em;
+  border: 1px solid var(--color-line);
+  background: var(--color-bg);
+  color: var(--color-ink);
+  border-radius: 2px;
+}
+
+.formulario .boton { align-self: flex-start; }
+
+/* --- 8. Pie de página --------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--color-line);
+  padding-block: var(--espacio-m);
+}
+.site-footer p {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: 0.875rem;
+}
+
+/* ===========================================================
+   Breakpoints — móvil primero
+   =========================================================== */
+
+/* --- Tablet: 640px --- */
+@media (min-width: 640px) {
+  .proyectos { flex-direction: row; flex-wrap: wrap; }
+  .proyecto { flex: 1 1 calc(50% - var(--espacio-m)); }
+}
+
+/* --- Escritorio: 1024px --- */
+@media (min-width: 1024px) {
+  .hero-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .hero-texto { flex: 1 1 58%; }
+  .hero-figura { flex: 1 1 34%; }
+
+  .proyecto { flex: 1 1 calc(33.333% - var(--espacio-m)); }
+
+  .contacto-inner { flex-direction: row; }
+  .contacto-info { flex: 1 1 40%; }
+  .formulario { flex: 1 1 50%; }
+}
+
+/* --- Respeto por reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andrés Lira — Ingeniería de sistemas y arquitectura backend</title>
+  <meta name="description" content="Portafolio de Andrés Lira, ingeniero de sistemas especializado en arquitectura backend y sistemas distribuidos. Proyectos, experiencia y contacto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#inicio">Andrés Lira</a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <section id="inicio" class="hero" aria-labelledby="hero-titulo">
+      <div class="wrap hero-inner">
+        <div class="hero-texto">
+          <p class="hero-kicker">Arquitectura backend &amp; sistemas distribuidos</p>
+          <h1 id="hero-titulo">Diseño sistemas que siguen funcionando<br>cuando nadie los mira.</h1>
+          <p class="hero-parrafo">
+            Trabajo con equipos de producto y startups para construir servicios backend,
+            planificadores de procesos y pipelines de datos pensados para escalar y para
+            depurarse a las tres de la mañana.
+          </p>
+          <a class="boton" href="#contacto">Escribir sobre un proyecto</a>
+        </div>
+        <div class="hero-figura" aria-hidden="true">
+          <svg viewBox="0 0 240 320" role="img" aria-hidden="true">
+            <line class="conexion" x1="120" y1="160" x2="60" y2="70"/>
+            <line class="conexion" x1="120" y1="160" x2="180" y2="70"/>
+            <line class="conexion" x1="120" y1="160" x2="50" y2="250"/>
+            <line class="conexion" x1="120" y1="160" x2="190" y2="250"/>
+            <line class="conexion" x1="60" y1="70" x2="180" y2="70"/>
+            <line class="conexion" x1="50" y1="250" x2="190" y2="250"/>
+            <circle class="nodo" cx="60" cy="70" r="10"/>
+            <circle class="nodo" cx="180" cy="70" r="10"/>
+            <circle class="nodo" cx="50" cy="250" r="10"/>
+            <circle class="nodo" cx="190" cy="250" r="10"/>
+            <circle class="nodo-central" cx="120" cy="160" r="16"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre-mi" class="sobre-mi" aria-labelledby="sobre-mi-titulo">
+      <div class="wrap">
+        <h2 id="sobre-mi-titulo">Sobre el proyecto</h2>
+        <p class="seccion-intro">
+          Estudié ingeniería de sistemas y desde 2018 dedico mis días a diseñar arquitecturas
+          backend, optimizar planificadores de procesos y documentar decisiones técnicas antes
+          de que se conviertan en deuda técnica. Cada proyecto empieza con un diagrama y termina
+          con pruebas de carga. Estos son tres proyectos recientes.
+        </p>
+
+        <div class="proyectos">
+          <article class="proyecto">
+            <h3>Planificador de procesos</h3>
+            <p class="proyecto-meta">Simulador educativo · C y Python · 2025</p>
+            <p>
+              Simulador de algoritmos de planificación (Round Robin, SJF, por prioridades) con
+              métricas de tiempo de espera, usado en un curso de sistemas operativos.
+            </p>
+          </article>
+
+          <article class="proyecto">
+            <h3>Cola de mensajería distribuida</h3>
+            <p class="proyecto-meta">Servicio backend · Go y RabbitMQ · 2024</p>
+            <p>
+              Sistema de mensajería asíncrona para procesar pedidos en un e-commerce mediano,
+              con reintentos y colas de mensajes fallidos.
+            </p>
+          </article>
+
+          <article class="proyecto">
+            <h3>Migración a contenedores</h3>
+            <p class="proyecto-meta">Documentación de arquitectura · Docker y Kubernetes · 2023</p>
+            <p>
+              Guía técnica y diagramas para migrar un monolito Java a servicios en contenedores,
+              pensada para un equipo sin experiencia previa en Kubernetes.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contacto" aria-labelledby="contacto-titulo">
+      <div class="wrap contacto-inner">
+        <div class="contacto-info">
+          <h2 id="contacto-titulo">Conversemos sobre tu proyecto</h2>
+          <p>
+            Respondo casi siempre en un par de días. Cuéntame qué sistema, servicio o migración
+            tienes en mente y qué problema estás resolviendo.
+          </p>
+          <address>
+            <p><a href="mailto:andres@lirasistemas.example">andres@lirasistemas.example</a></p>
+            <p>Bogotá, Colombia</p>
+          </address>
+        </div>
+
+        <form class="formulario" action="#" method="post">
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+          </div>
+
+          <div class="campo">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" autocomplete="email" required>
+          </div>
+
+          <div class="campo">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="boton">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; 2026 Andrés Lira. Sitio de proyecto — Taller Integrador, Ingeniería Web I.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
